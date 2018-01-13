@@ -7,6 +7,7 @@ var app = express();
 
 app.get('/', function (req, res) {
 	console.log('Hello World!!!');
+	console.log('Hello World2!!!');
 	res.send('Hi there!');
 });
 
