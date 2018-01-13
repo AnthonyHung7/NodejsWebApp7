@@ -23,17 +23,19 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model("Blog", blogSchema);
 
-Blog.create({
-	title: "Test Blog",
-	image: "https://images.unsplash.com/photo-1446231855385-1d4b0f025248",
-	body: "HELLO THIS IS A BLOG POST!"
-});
+//Blog.create({
+//	title: "Test Blog",
+//	image: "https://images.unsplash.com/photo-1446231855385-1d4b0f025248",
+//	body: "HELLO THIS IS A BLOG POST!"
+//});
 
 // RESTFUL ROUTES
 app.get('/', function (req, res) {
-	console.log('Hello World!!!');
-	console.log('Hello World2!!!');
-	res.send('Hi there!');
+	res.redirect('/blogs');
+});
+
+app.get('/blogs', function (req, res) {
+	res.render('index');
 });
 
 app.listen(port, 'localhost');
